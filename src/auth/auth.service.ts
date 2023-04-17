@@ -49,7 +49,9 @@ export class AuthService {
     const user = await this.userService.findByEmail(email);
 
     if (!user)
-      throw new NotFoundException('Não há usuário cadastrado com esse email.');
+      throw new NotFoundException(
+        'There is no user registered with this email.',
+      );
 
     const payload: UserPayload = {
       sub: user.id,
@@ -57,6 +59,8 @@ export class AuthService {
     };
 
     const jwtToken = this.jwtService.sign(payload);
+
+    await this.userService.createRecoverToken(user.email, jwtToken);
 
     const mail = {
       to: user.email,
