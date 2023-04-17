@@ -8,8 +8,19 @@ datasource db {
 }
 
 model User {
-  id           Int     @id @default(autoincrement())
-  email        String  @unique
+  id           Int       @id @default(autoincrement())
+  email        String    @unique
   password     String
-  recoverToken String? @unique
+  recoverToken String?   @unique
+  balances     Balance[]
+}
+
+model Balance {
+  id        Int       @id @default(autoincrement())
+  userId    Int
+  balance   Float     @default(0)
+  date      String    @default("")
+  createdAt DateTime  @default(now())
+  deletedAt DateTime?
+  user      User      @relation(fields: [userId], references: [id])
 }
