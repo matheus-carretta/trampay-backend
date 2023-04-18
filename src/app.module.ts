@@ -5,6 +5,7 @@ import { PrismaModule } from './prisma/prisma.module';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { MailerModule } from '@nestjs-modules/mailer';
+import { BalanceModule } from './balance/balance.module';
 import * as cors from 'cors';
 
 @Module({
@@ -12,6 +13,7 @@ import * as cors from 'cors';
     PrismaModule,
     UserModule,
     AuthModule,
+    BalanceModule,
     MailerModule.forRoot({
       transport: {
         host: 'smtp.office365.com',
@@ -26,6 +28,7 @@ import * as cors from 'cors';
         from: '"No Reply" <no-reply@example.com>',
       },
     }),
+    BalanceModule,
   ],
   controllers: [AppController],
   providers: [AppService],
