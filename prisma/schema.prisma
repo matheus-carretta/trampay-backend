@@ -19,8 +19,9 @@ model Balance {
   id        Int       @id @default(autoincrement())
   userId    Int
   balance   Float     @default(0)
-  date      String    @default("")
   createdAt DateTime  @default(now())
   deletedAt DateTime?
+  date      String    @default("")
+  document  String
   user      User      @relation(fields: [userId], references: [id])
 }
