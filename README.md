@@ -28,7 +28,14 @@ Você pode acessar o deploy dessa [API aqui](https://trampay-backend.onrender.co
 5. Inicie um banco de dados PostgreSQL e execute as migrações do banco de dados executando o comando `npm prisma migrate dev`
 6. Inicie o servidor de desenvolvimento executando o comando `npm run start:dev`
 
+---
+### Rotas da aplicação
 
+- POST /login - endpoint para autenticação do usuário com email e senha.
+- POST /send-recover-email - endpoint para recuperar a senha do usuário através do email.
+- POST /user - endpoint para criar um usuário
+- PATCH /user/reset-password/:token - endpoint para alterar a senha do usuário. O token vem do email.
+- POST /balance - endpoint que recebe um csv. Os dados da tabela vão para a tabela balance.
 ---
 ### Próximos passos
 
