@@ -28,7 +28,7 @@ export class AuthController {
   ): Promise<{ message: string }> {
     await this.authService.sendRecoverPasswordEmail(email);
     return {
-      message: 'Foi enviado um email com instruções para resetar sua senha',
+      message: 'Foi enviado um email com instruções para resetar sua senha. Verifique o Spam.',
     };
   }
 }
