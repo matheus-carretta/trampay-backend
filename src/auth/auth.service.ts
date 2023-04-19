@@ -73,7 +73,7 @@ export class AuthService {
             <h2 style="color: #292536; text-align: center">Solicitação de alteração de senha</h2>
             <p>Para alterar sua senha clique no botão abaixo, ou acesse o seguinte link: </p>
             <div style="margin: 20px auto; width: 120px; padding: 10px 20px; background-color: #442d52; border-radius: 5px">
-              <a href="http://url-do-front/reset-password/?token=${jwtToken}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #fcfcfc; font-size: 18px; margin: 0 auto;">Alterar Senha</a>
+              <a href="https://trampay-frontend.onrender.com//reset-password/?token=${jwtToken}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #fcfcfc; font-size: 18px; margin: 0 auto;">Alterar Senha</a>
             </div>
           </div>
         </center>
