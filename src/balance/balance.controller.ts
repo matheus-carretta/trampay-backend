@@ -25,5 +25,9 @@ export class BalanceController {
     const csv = file.buffer.toString();
 
     await this.balanceService.createBalances(csv, currentUser);
+
+    return {
+      message: 'Saldos cadastrados com sucesso',
+    };
   }
 }
